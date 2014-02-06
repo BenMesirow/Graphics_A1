@@ -1,0 +1,22 @@
+Guvenc Usanmaz and Ben Mesirow
+Assignment 1 Algorithms (Shapes) COMP 175
+
+CUBE:
+
+The X parameter corresponds to the number of small squares along a horizontal edge on each of face of the cube that touches that edge.  For example, if X == 4, then each edge touching the top and bottom faces will have 4 small squares touching it on each of the two faces that make that edge (so eight in total).  Similarly, the Y parameter corresponds to the number of small squares along each of the four vertical edges on each face touching that edge.
+
+On a cube, all triangles making up a face are parallel to the XY plane, so any vector normal to any of the triangles on the front face will be normal to the XY plane, i.e. parallel to the Z axis and pointing in the positive Z direction since this is the front face.  So, each triangle’s normal vector is (0,0,1).
+
+CYLINDER:
+
+For an arbitrary point (x,y,z) along the barrel of the cylinder, the vector normal to the surface tangent to that point is precisely the vector resulting from subtracting the origin from the point (x,0,z), i.e. the vector (x,0,z).  We can then normalize this vector with the usual formula to get its unit vector.
+
+CONE:
+
+The number of triangles on each “side” of the cone is 2 * segmentY - 1, since each tessellation on each side of the cone has two triangles, except for the top stack which only has one triangle on each side.  So, when segmentY = 1, each side will have one triangle.  Each side will have 3 triangles when segmentY = 2, and 5 when segmentY = 3.
+
+m = Δy / Δx = (0.5 - (-0.5)) / (0 - 0.5) = 1 / (-0.5) = -2
+
+SPHERE:
+
+The formula for the surface normal to an arbitrary point on a sphere centered at the origin is deceptively easy.  It is precisely the resultant vector of subtracting the origin from that point divided by the radius of the sphere (i.e. scaled by the ratio of the radius of the unit sphere (1) to the radius of that sphere (r)), which is equivalent to the magnitude of such a vector for any point.  This will give us the normalized surface normal to that point.  So, for a sphere of radius r, the surface normal to an arbitrary point (x,y,z) on the sphere is the vector (x,y,z) / r.
