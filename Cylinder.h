@@ -46,6 +46,22 @@ public:
 	};
 
 	void drawNormal() {
+		glBegin(GL_LINES);
+		for (int i = 0; i < m_segmentsX; ++i) {
+			for (int j = 0; j < m_segmentsY; ++j) {
+				Point p1 = Point(ithSliceXComponent(0.5,i,m_segmentsX),
+					             -0.5 + (1.0 * j) / m_segmentsY,
+					             ithSliceZComponent(0.5,i,m_segmentsX));
+				Vector v = Vector(ithSliceXComponent(0.5,i,m_segmentsX),
+					              0.0,
+					              ithSliceZComponent(0.5,i,m_segmentsX));
+				v.normalize();
+				Point p2 = p1 + v / 10;
+				glVertex3f(p1[0],p1[1],p1[2]);
+                glVertex3f(p2[0],p2[1],p2[2]);
+			}
+		}
+		glEnd();
 	};
 };
 

@@ -3,11 +3,11 @@
 
 #include "Shape.h"
 #include "tess.h"
-
+/*
 #define RHO 0.5
 #define PHI(stack)		(PI * stack / m_segmentsY - PI)
 #define THETA(slice)	(2 * PI * slice / m_segmentsX)
-
+*/
 class Sphere : public Shape {
 public:
 	Sphere() {};
@@ -54,10 +54,10 @@ public:
 				Vector v(p1[0],p1[1],p1[2]);
 				v.normalize();
 				glVertex3f(p1[0],p1[1],p1[2]);
-				Point p2 = p1 + v;
+				Point p2 = p1 + v / 10;
 				glVertex3f(p2[0],p2[1],p2[2]);
 			}
-		}	
+		}
 		glEnd();
 	};
 };
