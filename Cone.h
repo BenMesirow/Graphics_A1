@@ -20,6 +20,7 @@ public:
 			float upperZ = ithSliceZComponent(0.5,i+1,m_segmentsX);
 
 			/* bottom base */
+			glNormal3f(0, -1, 0);
 			glVertex3f(0.0, -0.5, 0.0);
 			glVertex3f(upperX,-0.5,upperZ);
 			glVertex3f(lowerX,-0.5,lowerZ);
@@ -41,9 +42,19 @@ public:
 				float lowerZU = ithSliceZComponent(upperR,i,m_segmentsX);
 				float upperZU = ithSliceZComponent(upperR,i+1,m_segmentsX);
 
+				Vector norm((ithSliceXComponent(0.5,i,m_segmentsX) + 
+							ithSliceXComponent(0.5,i+1,m_segmentsX))/2,
+					              0.25,
+					        (ithSliceZComponent(0.5,i,m_segmentsX) +
+					        ithSliceZComponent(0.5,i+1,m_segmentsX))/2);
+				norm.normalize();
+
+				glNormal3f(norm[0],norm[1],norm[2]);
 				glVertex3f(lowerXL,lowerY,lowerZL);
 				glVertex3f(upperXL,lowerY,upperZL);
 				glVertex3f(lowerXU,upperY,lowerZU);
+
+				glNormal3f(norm[0],norm[1],norm[2]);
 				glVertex3f(lowerXU,upperY,lowerZU);
 				glVertex3f(upperXL,lowerY,upperZL);
 				glVertex3f(upperXU,upperY,upperZU);

@@ -2,4 +2,3 @@
 
 g++ -Wno-deprecated -I/Library/Frameworks/GLUI.framework Assignment1.cpp -framework OpenGL -framework GLUI -framework GLUT -o a1
 
-

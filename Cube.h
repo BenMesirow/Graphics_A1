@@ -22,9 +22,12 @@ public:
 				p3 = Point(-0.5+x/m_segmentsX,-0.5+(y+1.0)/m_segmentsY,0.5);
 				p4 = Point(-0.5+(x+1.0)/m_segmentsX,-0.5+(y+1.0)/m_segmentsY,0.5);
 
+				glNormal3f(0,0,1);
 				glVertex3f(p1[0], p1[1], p1[2]);
 				glVertex3f(p2[0], p2[1], p2[2]);
 				glVertex3f(p3[0], p3[1], p3[2]);
+
+				glNormal3f(0,0,1);
 				glVertex3f(p3[0], p3[1], p3[2]);
 				glVertex3f(p2[0], p2[1], p2[2]);
 				glVertex3f(p4[0], p4[1], p4[2]);
@@ -35,9 +38,12 @@ public:
 				p3 = Point(0.5,-0.5+(y+1.0)/m_segmentsY,0.5-x/m_segmentsX);
 				p4 = Point(0.5,-0.5+(y+1.0)/m_segmentsY,0.5-(x+1.0)/m_segmentsX);
 
+				glNormal3f(1, 0, 0);
 				glVertex3f(p1[0], p1[1], p1[2]);
 				glVertex3f(p2[0], p2[1], p2[2]);
 				glVertex3f(p3[0], p3[1], p3[2]);
+
+				glNormal3f(1, 0, 0);
 				glVertex3f(p3[0], p3[1], p3[2]);
 				glVertex3f(p2[0], p2[1], p2[2]);
 				glVertex3f(p4[0], p4[1], p4[2]);
@@ -48,9 +54,12 @@ public:
 				p3 = Point(0.5-x/m_segmentsX,-0.5+(y+1.0)/m_segmentsY,-0.5);
 				p4 = Point(0.5-(x+1.0)/m_segmentsX,-0.5+(y+1.0)/m_segmentsY,-0.5);
 
+				glNormal3f(0, 0, -1);
 				glVertex3f(p1[0], p1[1], p1[2]);
 				glVertex3f(p2[0], p2[1], p2[2]);
 				glVertex3f(p3[0], p3[1], p3[2]);
+
+				glNormal3f(0, 0, -1);
 				glVertex3f(p3[0], p3[1], p3[2]);
 				glVertex3f(p2[0], p2[1], p2[2]);
 				glVertex3f(p4[0], p4[1], p4[2]);				
@@ -61,9 +70,11 @@ public:
 				p3 = Point(-0.5,-0.5+(y+1.0)/m_segmentsY,-0.5+x/m_segmentsX);
 				p4 = Point(-0.5,-0.5+(y+1.0)/m_segmentsY,-0.5+(x+1.0)/m_segmentsX);
 
+				glNormal3f(-1, 0, 0);
 				glVertex3f(p1[0], p1[1], p1[2]);
 				glVertex3f(p2[0], p2[1], p2[2]);
 				glVertex3f(p3[0], p3[1], p3[2]);
+				glNormal3f(-1, 0, 0);
 				glVertex3f(p3[0], p3[1], p3[2]);
 				glVertex3f(p2[0], p2[1], p2[2]);
 				glVertex3f(p4[0], p4[1], p4[2]);				
@@ -77,9 +88,12 @@ public:
 				p3 = Point(-0.5+(x+1.0)/m_segmentsX,0.5,0.5-z/m_segmentsX);
 				p4 = Point(-0.5+(x+1.0)/m_segmentsX,0.5,0.5-(z+1.0)/m_segmentsX);
 
+				glNormal3f(0, 1, 0);
 				glVertex3f(p1[0], p1[1], p1[2]);
 				glVertex3f(p2[0], p2[1], p2[2]);
 				glVertex3f(p3[0], p3[1], p3[2]);
+
+				glNormal3f(0, 1, 0);
 				glVertex3f(p3[0], p3[1], p3[2]);
 				glVertex3f(p2[0], p2[1], p2[2]);
 				glVertex3f(p4[0], p4[1], p4[2]);				
@@ -90,9 +104,12 @@ public:
 				p3 = Point(-0.5+(x+1.0)/m_segmentsX,-0.5,-0.5+z/m_segmentsX);
 				p4 = Point(-0.5+(x+1.0)/m_segmentsX,-0.5,-0.5+(z+1.0)/m_segmentsX);
 
+				glNormal3f(0, -1, 0);
 				glVertex3f(p1[0], p1[1], p1[2]);
 				glVertex3f(p2[0], p2[1], p2[2]);
 				glVertex3f(p3[0], p3[1], p3[2]);
+
+				glNormal3f(0, -1, 0);
 				glVertex3f(p3[0], p3[1], p3[2]);
 				glVertex3f(p2[0], p2[1], p2[2]);
 				glVertex3f(p4[0], p4[1], p4[2]);				
